@@ -7,7 +7,7 @@
 -- ///
 -- TABULKA Č.1 — VÝVOJ MEZD A CEN POTRAVIN V LETECH 2006-2018
 
--- create or replace view v_salary_merge as
+create or replace view v_salary_merge as
 select 	name as industry_branch,
 				payroll_year,
 				ROUND(avg(cp.value), 1) as salary,
@@ -18,7 +18,9 @@ where value_type_code = 5958 and name is not NULL
 group by payroll_year, industry_branch_code
 order by name, payroll_year;
 
--- create or replace view v_prices_merge as
+-- 
+
+create or replace view v_prices_merge as
 select name,
 	   ROUND(avg(value), 1) as price,
 	   year(date_from) as price_year
@@ -103,7 +105,7 @@ where name in ('Chléb konzumní kmínový', 'Mléko polotučné pasterované')
 	  and payroll_year in (2006, 2018)
 order by name, payroll_year asc;
 
--- V tabulce vidíme ve sloupci 'bying_power', kolik litrů mléka a kilogramů chleba bylo možné pořídit za mzdu v daném odvětví a daném roce.
+-- V tabulce vidíme ve sloupci 'buying_power', kolik litrů mléka a kilogramů chleba bylo možné pořídit za mzdu v daném odvětví a daném roce.
 -- (z tabulky czechia_price_category víme, že mléko je v základní ceně za litr a chléb za kilogram, proto mi přišlo nadbytečné přidávat dva další sloupce na jednotky a počet jednotek)
 
 select 	name, 
