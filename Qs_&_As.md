@@ -19,13 +19,13 @@
 - **Banány žluté** jsou kategorie, která v námi vybraném období (od roku 2006 do roku 2018) zdražuje nejpomaleji, a to s celkovým nárůstem o 7,33%, meziročním nárůstem potom 0,52%. Zde je ale důležité zmínit, že se v dostupných datech vyskytly i dvě kategorie potravin, které zaznamenaly od roku
   2006 do roku 2018 pokles, a těmi jsou **"Cukr krystalový"** s celkovým poklesem 27,19% (s meziročním poklesem potom 1,94%)  a **"Rajská jablka červená kulata"** s celkovým poklesem 23,01% (s meziročním poklesem potom 1,64%).
 - Zde ale nepočítám s kategorií "Jakostní víno bílé", vzhledem k tomu, že pro ni není dostatek dat pro férové hodnocení vzhledem k ostatním kategoriím.
-- (Pokud by nás u této otázky zajímal nejnižší průměrný percentuální meziroční nárůst ceny vzhledem k ceně v předchozím roku, byla by odpověď stejná, nicméně by se lišily procenta nárůstu/poklesu — viz přiložený SQL soubor řádek č.: )
+- (Pokud by nás u této otázky zajímal nejnižší průměrný percentuální meziroční nárůst ceny vzhledem k ceně v předchozím roku, byla by odpověď stejná, nicméně by se lišily procenta nárůstu/poklesu — viz přiložený SQL soubor řádek č.: 151)
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
 - **Ne**, v dostupnýách datech neexistuje rok, ve kterém by byl meziroční nárůst cen potravin vyšší než 10% oproti meziročnímu růstu mezd.
-- Nicméně stojí znovu za zmínku rok 2013, kdy byl rozdíl mezi ročním navýšením cen potravin a meziročním navýšením mezd 6,66% (kdy potraviny zdražily o 5,1% a mzdy klesly o 1,56%). 
-- Naopak "nejúspěšnějším" rokem byl rok 2009, kdy mzdy vzrostly o 3,16% a ceny potravin klesly o 6,41%.
+- Nicméně stojí znovu za zmínku rok **2013**, kdy byl rozdíl mezi ročním navýšením cen potravin a meziročním navýšením mezd 6,66% (kdy **potraviny zdražily o 5,1%** a **mzdy klesly o 1,56%**). 
+- Naopak "nejúspěšnějším" rokem byl rok **2009**, kdy **mzdy vzrostly o 3,16%** a **ceny potravin klesly o 6,41%**.
 
 ##  5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 
