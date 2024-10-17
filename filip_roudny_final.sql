@@ -4,7 +4,7 @@
 -- 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 -- 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 
--- //
+-- ///
 -- TABULKA Č.1 — VÝVOJ MEZD A CEN POTRAVIN V LETECH 2006-2018
 
 -- create or replace view v_salary_merge as
@@ -27,16 +27,16 @@ left join czechia_price_category cpc on cp.category_code = cpc.code
 where region_code is null
 group by name, price_year;
 
--- 
+-- finální tabulka
 create or replace table t_filip_roudny_project_SQL_primary_final
 select *
 from v_prices_merge tpm 
 join v_salary_merge tsm on tpm.price_year = tsm.payroll_year;
 
--- //
+-- ///
 -- TABULKA Č.2: 
 
--- create or replace table t_filip_roudny_project_SQL_secondary_final as 
+create or replace table t_filip_roudny_project_SQL_secondary_final as 
 select e.country,
 	   e.year as economy_year,
 	   gdp,
@@ -51,7 +51,7 @@ order by e.country, year;
 -- //
 -- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
--- create or replace view v_salary_view as
+create or replace view v_salary_view as
 select  industry_branch,
 		payroll_year,
 		salary,
@@ -129,7 +129,7 @@ from t_filip_roudny_project_sql_primary_final tfrpspf
 group by name, payroll_year
 order by name;
 
--- create or replace view v_price_development as
+create or replace view v_price_development as
 with prices_with_previous_year as 
 		(select name,
 	   			payroll_year,
@@ -154,13 +154,13 @@ from v_price_development vpd
 group by name
 order by avg_price_development;
 
--- V této tabulce vidíme, že nejnižší průměrný percentuální meziroční nárůst (nebo spíš pokles) ceny má kategorie 'Cukr krystalový', která průměrně každým rokem klesá o 3,8% od předchozího roku. 
+-- V této tabulce vidíme, že nejnižší průměrný percentuální meziroční nárůst (nebo spíš pokles) ceny má kategorie 'Cukr krystalový'.
 -- Nicméně je důležité poznamenat, že tento způsob výpočtu počítá s každým meziročním nárůstem/poklesem ceny oproti předchozímu roku,
 -- neodvíjí se tedy od ceny v prvním pevném bodu (rok 2006) vzhledem k ceně v posledním pevném bodu (rok 2018).
 -- Pokud by nás zajímal průměrný nárůst od 2006 do 2018 bez počítání každé meziroční ceny, byl by nejmenší procentuální nárůst(největší pokles) u kategorie 'Cukr krystalový', který klesal o 1,94% ročně 
 -- ('Rajská jablka červená' by v tomto případě byla na druhém místě s klesáním o 1,64% ročně) :
 
--- create or replace view v_price_comparison_2008_2016 as
+create or replace view v_price_comparison_2008_2016 as
 select name,
 	   payroll_year,
 	   price as price_2018,
@@ -186,7 +186,7 @@ order by price_diff_yearly;
 -- //
 -- 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
--- create or replace view v_salary_comparison as
+create or replace view v_salary_comparison as
 select payroll_year,
 	   AVG(salary),
 	   AVG(salary_previous_year),
@@ -195,7 +195,9 @@ from v_salary_view sv
 where salary_previous_year is not null
 group by payroll_year;
 
--- create or replace view v_price_comparison as
+-- 
+
+create or replace view v_price_comparison as
 select vpd.payroll_year as payroll_year_prices,
 	   AVG(price) as avg_price,
 	   AVG(price_previous_year) as avg_price_previous_year,
@@ -212,14 +214,14 @@ from v_price_comparison vpc
 join v_salary_comparison vsc on vpc.payroll_year_prices = vsc.payroll_year;
 
 -- Z tabulky lze vyčíst, že neexistuje rok, kdy by byl meziroční nárůst cen potravin výrazně vyšší (více než 10%) než nárůst mezd. Nicméně stojí znovu za zmínku rok 2013,
--- kdy byl rozdíl mezi ročním navýšením cen potravin a navýšením meziročních mezd 6,66% (kdy potraviny zdražily o 5,1% a mzdy klesly o 1,56%). 
+-- kdy byl rozdíl mezi ročním navýšením cen potravin a  meziročním navýšením mezd 6,66% (kdy potraviny zdražily o 5,1% a mzdy klesly o 1,56%). 
 -- Naopak "nejúspěšnějším" rokem byl rok 2009, kdy mzdy vzrostly o 3,16% a ceny potravin klesly o 6,41%. 
 
 -- // 
 -- 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, 
 --    projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 
--- create or replace view v_gdp_with_previous_year as
+create or replace view v_gdp_with_previous_year as
 select economy_year,
 	   country,
 	   gdp,
@@ -245,7 +247,8 @@ select country,
 from gdp_with_previous_year
 where gdp_previous_year is not null;
 
--- create or replace view v_gdp_development as
+-- 
+create or replace view v_gdp_development as
 select country,
 	   economy_year,
 	   gdp,
