@@ -29,13 +29,14 @@
 
 ##  5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 
-- Nemyslím si, že by dostupná data mohla s jistotou potvrdit hypotézu. Pro vysvětlení:
-                                                                        -Návaznost cen na výrazný růst HDP:
-                                                          - V roce 2007 vzrostl HDP o 5,57% (nejvyšší nárůst HDP ve sledovaném odvětví), ceny v tomtéž roce vzrostly o 6,77%. V následujícím roce se opět ceny zvýšily, a to o 6,21%.
-                                                            Z vývoje cen a HDP v roce 2007 a 2008 bychom tedy mohli usuzovat, že pokud výrazně vzroste HDP, promítne se to negativně na cenách potravin — tedy ceny potravin vzrostou.
-                                                          - To ale vyvrací rok 2015, kdy HDP vzrostl o 5,39% (druhý nejvyšší nárůst HDP ve sledovaném odvětví), zatímco ceny klesly o 2,9% a následujícím rokem klesly ceny znovu a to o 1,18%.
+- Nemyslím si, že by dostupná data mohla s jistotou potvrdit hypotézu.
+- Pro vysvětlení:
+    **Návaznost cen na výrazný růst HDP:**
+       V roce 2007 vzrostl HDP o 5,57% (nejvyšší nárůst HDP ve sledovaném odvětví), ceny v tomtéž roce vzrostly o 6,77%. V následujícím roce se opět ceny zvýšily, a to o 6,21%.
+       Z vývoje cen a HDP v roce 2007 a 2008 bychom tedy mohli usuzovat, že pokud výrazně vzroste HDP, promítne se to negativně na cenách potravin — tedy ceny potravin vzrostou.
+       To ale vyvrací rok 2015, kdy HDP vzrostl o 5,39% (druhý nejvyšší nárůst HDP ve sledovaném odvětví), zatímco ceny klesly o 2,9% a následujícím rokem klesly ceny znovu a to o 1,18%.
 
-                                                                        -Návaznost růstu mezd na výrazný růst HDP:
-                                                          - V roce 2007 vzrostl HDP o 5,57% (nejvyšší nárůst HDP ve sledovaném odvětví), mzdy v tomtéž roce vzrostly o 6,84%. V následujícím roce se opět mzdy zvýšily, a to o 7,87%.
-                                                            To znovu navádí k myšlence, že pokud výrazně vzroste HDP, tak bude možné sledovat i výrazný nárůst průměrných mezd.
-                                                          - Což znovu částečně vyvrací rok 2015, kdy HDP vzrostl o 5,39% (druhý nejvyšší nárůst HDP ve sledovaném odvětví), ale mzdy narostly pouze o 2,51% a napřesrok o 3,65% — tudíž nárůst mezd nebyl tak výrazný.
+   **Návaznost růstu mezd na výrazný růst HDP:**
+       V roce 2007 vzrostl HDP o 5,57% (nejvyšší nárůst HDP ve sledovaném odvětví), mzdy v tomtéž roce vzrostly o 6,84%. V následujícím roce se opět mzdy zvýšily, a to o 7,87%.
+       To znovu navádí k myšlence, že pokud výrazně vzroste HDP, tak bude možné sledovat i výrazný nárůst průměrných mezd.
+       Což znovu částečně vyvrací rok 2015, kdy HDP vzrostl o 5,39% (druhý nejvyšší nárůst HDP ve sledovaném odvětví), ale mzdy narostly pouze o 2,51% a napřesrok o 3,65% — tudíž nárůst mezd nebyl tak výrazný.
