@@ -2,7 +2,7 @@
 
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
-- Z dostupných dat bylo zjištěno, že ne ve všech odvětvích v období od roku 2006 do roku 2018 mzdy každoročně rostou — bylo nalezeno 23 případů, kdy mzdy napřesrok klesaly. Nicméně je zde důležité zmínit, že 11 z 23 zjištěných poklesů bylo v roce 2013, což měla na svědomí tzv. 'Velká recese'. 
+- Z dostupných dat bylo zjištěno, že ne ve všech odvětvích v období od roku 2006 do roku 2018 mzdy každoročně rostou — bylo nalezeno 23 případů, kdy mzdy napřesrok klesaly. Nicméně je zde důležité zmínit, že 11 z 23 zjištěných poklesů bylo v roce 2013, což bylo v období tzv. 'Velké recese'. 
 (Zdroj: https://csu.gov.cz/2013-_ekonomika_a_kvalita_zivota)
 - Dovolím si zde doplnit, že meziročních poklesů bylo v dostupných datech více, tedy přesně 30. K dalším poklesům došlo v roce 2020, kdy byl zaznamenán meziroční pokles v odvětvích **"Ubytování, stravování a pohostinství"**, **"Činnosti v oblasti nemovitostí"**, 
   a v roce 2021, kdy pokles zaznamela odvětví **"Stavebnictví"**, **"Veřejná správa a obrana, povinné sociální zabezpečení"**, **"Vzdělávání"**, **"Zemědělství, lesnictví, rybářství"** a **"Kulturní, zábavní a rekreační činnosti"**.
@@ -23,7 +23,7 @@
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
-- **Ne**, v dostupnýách datech neexistuje rok, ve kterém by byl meziroční nárůst cen potravin vyšší než 10% oproti meziročnímu růstu mezd.
+- **Ne**, v dostupných datech neexistuje rok, ve kterém by byl meziroční nárůst cen potravin vyšší než 10% oproti meziročnímu růstu mezd.
 - Nicméně stojí znovu za zmínku rok **2013**, kdy byl rozdíl mezi ročním navýšením cen potravin a meziročním navýšením mezd 6,66% (kdy **potraviny zdražily o 5,1%** a **mzdy klesly o 1,56%**). 
 - Naopak "nejúspěšnějším" rokem byl rok **2009**, kdy **mzdy vzrostly o 3,16%** a **ceny potravin klesly o 6,41%**.
 
