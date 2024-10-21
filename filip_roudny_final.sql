@@ -178,11 +178,10 @@ select name,
 	   price_2018,
 	   price_2006,
 	   CONCAT(ROUND(((price_2018/price_2006)*100 - 100), 2), ' %') as price_diff,
-	   CONCAT(ROUND(((price_2018/price_2006)*100 - 100)/14, 2), ' %') as price_diff_yearly_percentagesign,
-	   ROUND(((price_2018/price_2006)*100 - 100)/14, 2) as price_diff_yearly
+	   CONCAT(ROUND(((price_2018/price_2006)*100 - 100)/14, 2), ' %') as price_diff_yearly
 from v_price_comparison_2008_2016 vpc 
 where price_2006 is not null
-order by price_diff_yearly;
+order by ROUND(((price_2018/price_2006)*100 - 100)/14, 2);
 
 -- Zde ale nepočítám s kategorií 'Jakostní víno bílé', vzhledem k tomu, že pro ni není dostatek dat pro férové hodnocení vzhledem k ostatním kategoriím.
 
