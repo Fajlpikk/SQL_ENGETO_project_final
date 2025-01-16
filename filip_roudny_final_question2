@@ -1,0 +1,27 @@
+-- 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+
+select  industry_branch,
+		payroll_year,
+		salary,
+		name,
+		price,
+		ROUND(salary/price, 0) as buying_power
+from t_filip_roudny_project_sql_primary_final tfrpspf 
+where name in ('Chléb konzumní kmínový', 'Mléko polotučné pasterované') 
+	  and payroll_year in (2006, 2018)
+order by name, payroll_year asc;
+
+-- V tabulce vidíme ve sloupci 'buying_power', kolik litrů mléka a kilogramů chleba bylo možné pořídit za mzdu v daném odvětví a daném roce.
+-- (z tabulky czechia_price_category víme, že mléko je v základní ceně za litr a chléb za kilogram, proto mi přišlo nadbytečné přidávat dva další sloupce na jednotky a počet jednotek)
+
+select 	name, 
+		payroll_year,
+		price,
+		ROUND(avg(salary), 2) as avg_salary,
+		ROUND(avg(salary)/price, 0) as buying_power
+from t_filip_roudny_project_sql_primary_final tfrpspf 
+where name in ('Chléb konzumní kmínový', 'Mléko polotučné pasterované') 
+	  and payroll_year in (2006, 2018)
+group by name, payroll_year;
+
+-- V této tabulce vidíme, kolik litrů mléka a kilogramů chleba bylo možnos pořídit v roce 2006 a 2018 za průměrnou mzdu ve všech odvětvích.
