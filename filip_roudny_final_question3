@@ -9,6 +9,7 @@ group by name, payroll_year
 order by name;
 
 -- 
+
 create or replace view v_price_development as
 with prices_with_previous_year as 
 		(select name,
@@ -28,6 +29,7 @@ where price_previous_year is not null
 group by name, payroll_year;
 
 -- 
+
 select name,
        ROUND(AVG(price_development), 2) as avg_price_development
 from v_price_development vpd 
@@ -35,8 +37,7 @@ group by name
 order by avg_price_development;
 
 -- V této tabulce vidíme, že nejnižší průměrný percentuální meziroční nárůst (nebo spíš pokles) ceny má kategorie 'Cukr krystalový'.
--- Nicméně je důležité poznamenat, že tento způsob výpočtu počítá s každým meziročním nárůstem/poklesem ceny oproti předchozímu roku,
--- neodvíjí se tedy od ceny v prvním pevném bodu (rok 2006) vzhledem k ceně v posledním pevném bodu (rok 2018).
+
 -- Pokud by nás zajímal průměrný nárůst od 2006 do 2018 bez počítání každé meziroční ceny:
 
 create or replace view v_price_comparison_2008_2016 as
