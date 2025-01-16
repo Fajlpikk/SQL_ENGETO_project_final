@@ -28,7 +28,7 @@ select *
 from v_prices_merge tpm 
 join v_salary_merge tsm on tpm.price_year = tsm.payroll_year;
 
--- ///
+-- //
 -- TABULKA Č.2: 
 
 create or replace table t_filip_roudny_project_SQL_secondary_final as 
