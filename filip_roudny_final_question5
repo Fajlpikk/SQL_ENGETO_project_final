@@ -1,0 +1,55 @@
+-- 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, 
+--    projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
+
+create or replace view v_gdp_with_previous_year as
+select economy_year,
+	   country,
+	   gdp,
+	   LAG(gdp) over (partition by country order by economy_year) as gdp_previous_year
+from t_filip_roudny_project_sql_secondary_final tfrpssf
+where country like 'czech republic'
+order by economy_year ;
+
+-- 
+
+with gdp_with_previous_year as 
+		(select economy_year,
+	   			country,
+	  			gdp,
+	   			LAG(gdp) over (partition by country order by economy_year) as gdp_previous_year
+		 from t_filip_roudny_project_sql_secondary_final tfrpssf
+		 where country like 'czech republic'
+		 order by economy_year)
+select country,
+	   economy_year,
+	   gdp,
+	   gdp_previous_year,
+	   ROUND((gdp/gdp_previous_year)*100-100, 2) as gdp_development
+from gdp_with_previous_year
+where gdp_previous_year is not null;
+
+-- 
+
+create or replace view v_gdp_development as
+select country,
+	   economy_year,
+	   gdp,
+	   gdp_previous_year,
+	   ROUND((gdp/gdp_previous_year)*100-100, 2) as gdp_development
+from v_gdp_with_previous_year
+where gdp_previous_year is not null
+      and country like 'czech republic';
+
+-- 
+
+select payroll_year,
+	   price_diff,
+	   salary_diff,
+	   gdp_development,
+	   price_diff-salary_diff as price_and_salary_diff
+from v_price_comparison vpc 
+join v_salary_comparison vsc on vpc.payroll_year_prices = vsc.payroll_year
+join v_gdp_development vgd on vpc.payroll_year_prices = vgd.economy_year
+where country like 'czech republic'; 
+
+-- Z dostupných dat nelze s jistotou vyvrátit ani potvrdit hypotézu, že by měl růst HDP vliv na změny ve mzdách či mzdách ve stejném nebo následujícím roce.
