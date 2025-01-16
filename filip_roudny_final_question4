@@ -1,0 +1,31 @@
+-- 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+
+create or replace view v_salary_comparison as
+select payroll_year,
+	   AVG(salary),
+	   AVG(salary_previous_year),
+	   CONCAT(ROUND(((AVG(salary)/AVG(salary_previous_year))*100-100), 2), ' %') as salary_diff
+from v_salary_view sv 
+where salary_previous_year is not null
+group by payroll_year;
+
+-- 
+
+create or replace view v_price_comparison as
+select vpd.payroll_year as payroll_year_prices,
+	   AVG(price) as avg_price,
+	   AVG(price_previous_year) as avg_price_previous_year,
+	   CONCAT(ROUND(((AVG(price)/AVG(price_previous_year))*100-100),2), ' %') as price_diff
+from v_price_development vpd 
+group by vpd.payroll_year;
+
+-- 
+
+select payroll_year,
+	   price_diff,
+	   salary_diff,
+	   price_diff-salary_diff as price_and_salary_diff
+from v_price_comparison vpc 
+join v_salary_comparison vsc on vpc.payroll_year_prices = vsc.payroll_year;
+
+-- Z tabulky lze vyčíst, že neexistuje rok, kdy by byl meziroční nárůst cen potravin výrazně vyšší (více než 10%) než nárůst mezd.
