@@ -1,0 +1,35 @@
+-- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+
+create or replace view v_salary_view as
+select  industry_branch,
+		payroll_year,
+		salary,
+		LAG(salary) over (partition by industry_branch order by payroll_year) as salary_previous_year,
+		case 
+			when salary > LAG(salary) over (partition by industry_branch order by payroll_year) then 'higher'
+			when LAG(salary) over (partition by industry_branch order by payroll_year) is NULL then 'without_comparison'
+			else 'lower'
+			end as payroll_rise
+from t_filip_roudny_project_sql_primary_final tfrpspf
+group by industry_branch, payroll_year;
+
+-- 
+select *
+from salary_view sv 
+where salary_previous_year > salary; -- and payroll_year = 2013;
+
+-- V dostupné tabulce vidíme, že ne ve všech odvětvích mzdy každoročně rostou — bylo nalezeno 23 případů, kdy mzdy napřesrok klesaly. 
+
+select  industry_branch,
+		payroll_year,
+		salary,
+		LAG(salary) over (partition by industry_branch order by payroll_year) as salary_previous_year,
+		case 
+			when salary > LAG(salary) over (partition by industry_branch order by payroll_year) then 'higher'
+			when LAG(salary) over (partition by industry_branch order by payroll_year) is NULL then 'base_salary'
+			else 'lower' end as payroll_rise
+from t_filip_roudny_project_sql_primary_final tfrpspf
+where payroll_year in (2006, 2018)
+group by industry_branch, payroll_year;
+
+-- Doplňující tabulka znázorňující, že od roku 2006 do roku 2018 vzrostly mzdy ve všech odvětvích.
