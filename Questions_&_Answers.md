@@ -19,7 +19,7 @@
 - **Banány žluté** jsou kategorie, která v námi vybraném období (od roku 2006 do roku 2018) zdražuje nejpomaleji, a to s celkovým nárůstem o 7,33%, meziročním nárůstem potom 0,52%. Zde je ale důležité zmínit, že se v dostupných datech vyskytly i dvě kategorie potravin, které zaznamenaly od roku
   2006 do roku 2018 pokles, a těmi jsou **"Cukr krystalový"** s celkovým poklesem 27,19% (s meziročním poklesem potom 1,94%)  a **"Rajská jablka červená kulata"** s celkovým poklesem 23,01% (s meziročním poklesem potom 1,64%).
 - Zde ale nepočítám s kategorií "Jakostní víno bílé", vzhledem k tomu, že pro ni není dostatek dat pro férové hodnocení vzhledem k ostatním kategoriím.
-- (Pokud by nás u této otázky zajímal nejnižší průměrný percentuální meziroční nárůst ceny vzhledem k ceně v předchozím roku, byla by odpověď stejná, nicméně by se lišily procenta nárůstu/poklesu — viz přiložený SQL soubor řádek č.: 151)
+- (Pokud by nás u této otázky zajímal nejnižší průměrný percentuální meziroční nárůst ceny vzhledem k ceně v předchozím roku, byla by odpověď stejná, nicméně by se lišily procenta nárůstu/poklesu — viz přiložený SQL soubor filip_roudny_final_question3)
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
